@@ -1,5 +1,5 @@
 # XBMC Media Center language file
-# Addon Name: Mazačka - Streets of Prague stream
+# Addon Name: Mazačka - Streets of Prague
 # Addon id: plugin.video.mazacka
 # Addon Provider: Radek Homola
 msgid ""
@@ -14,11 +14,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgctxt "#30000"
-msgid "720p"
-msgstr "Watch the live stream in 720p."
+msgid "Watch the live stream in 720p."
+msgstr ""
 
 msgctxt "#30001"
-msgid "360p"
-msgstr "Watch the live stream in 360p."
+msgid "Watch the live stream in 360p."
+msgstr ""

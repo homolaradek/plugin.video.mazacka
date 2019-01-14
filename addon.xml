@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.mazacka"
 version="1.0"
-name="Mazačka - Streets of Prague stream"
+name="Mazačka - Streets of Prague"
 provider-name="Radek Homola">
 <requires>
   <import addon="xbmc.python" version="2.25.0"/>
