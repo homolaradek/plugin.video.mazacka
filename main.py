@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # Module: default
 # Author: Radek Homola
 # Created on: 13.1.2019
@@ -15,7 +15,7 @@ import xbmcplugin
 _url = sys.argv[0]
 # Get the plugin handle as an integer number.
 _handle = int(sys.argv[1])
-PLUGIN_ID = 'plugin.cz.sdc.mazacka'
+PLUGIN_ID = 'plugin.video.mazacka'
 MEDIA_URL = 'special://home/addons/{0}/resources/media/'.format(PLUGIN_ID)
 _lang = xbmcaddon.Addon(PLUGIN_ID).getLocalizedString
 
@@ -39,13 +39,13 @@ def router(paramstring):
         xbmcplugin.setContent(_handle, 'movies')
         list_item = xbmcgui.ListItem(label='720p')
         list_item.setInfo('video', {'title': 'Mazačka 720p', 'mediatype': 'video', 'plot': _lang(30000)})
-        list_item.setArt({'thumb': MEDIA_URL + 'icon720.png', 'icon': MEDIA_URL + 'icon720.png'})
+        list_item.setArt({'thumb': MEDIA_URL + 'icon720.png', 'fanart': 'fanart.jpg', 'icon': MEDIA_URL + 'icon720.png'})
         list_item.setProperty('IsPlayable', 'true')
         is_folder = False
         xbmcplugin.addDirectoryItem(_handle, get_url(action='play', video='rtmp://live.idnes.cz/slow/slowtv7_720p'), list_item, is_folder)
         list_item = xbmcgui.ListItem(label='360p')
         list_item.setInfo('video', {'title': 'Mazačka 360p', 'mediatype': 'video', 'plot': _lang(30001)})
-        list_item.setArt({'thumb': MEDIA_URL + 'icon360.png', 'icon': MEDIA_URL + 'icon360.png'})
+        list_item.setArt({'thumb': MEDIA_URL + 'icon360.png', 'fanart': 'fanart.jpg', 'icon': MEDIA_URL + 'icon360.png'})
         list_item.setProperty('IsPlayable', 'true')
         is_folder = False
         xbmcplugin.addDirectoryItem(_handle, get_url(action='play', video='rtmp://live.idnes.cz/slow/slowtv7_360p'), list_item, is_folder)
