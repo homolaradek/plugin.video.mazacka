@@ -36,19 +36,20 @@ def router(paramstring):
         else:
             raise ValueError('Invalid paramstring: {0}!'.format(paramstring))
     else:
+        fanart = 'special://home/addons/{0}/fanart.jpg'.format(PLUGIN_ID)
         xbmcplugin.setContent(_handle, 'movies')
         list_item = xbmcgui.ListItem(label='720p')
         list_item.setInfo('video', {'title': 'Mazačka 720p', 'mediatype': 'video', 'plot': _lang(30000)})
-        list_item.setArt({'thumb': MEDIA_URL + 'icon720.png', 'fanart': 'special://home/addons/{0}/fanart.jpg'.format(PLUGIN_ID), 'icon': MEDIA_URL + 'icon720.png'})
+        list_item.setArt({'thumb': MEDIA_URL + 'icon720.png', 'fanart': fanart, 'icon': MEDIA_URL + 'icon720.png'})
         list_item.setProperty('IsPlayable', 'true')
         is_folder = False
-        xbmcplugin.addDirectoryItem(_handle, get_url(action='play', video='rtmp://live.idnes.cz/slow/slowtv7_720p'), list_item, is_folder)
+        xbmcplugin.addDirectoryItem(_handle, get_url(action='play', video='http://live.idnes.cz/slow/slowtv7_720p/playlist.m3u8'), list_item, is_folder)
         list_item = xbmcgui.ListItem(label='360p')
         list_item.setInfo('video', {'title': 'Mazačka 360p', 'mediatype': 'video', 'plot': _lang(30001)})
-        list_item.setArt({'thumb': MEDIA_URL + 'icon360.png', 'fanart': 'special://home/addons/{0}/fanart.jpg'.format(PLUGIN_ID), 'icon': MEDIA_URL + 'icon360.png'})
+        list_item.setArt({'thumb': MEDIA_URL + 'icon360.png', 'fanart': fanart, 'icon': MEDIA_URL + 'icon360.png'})
         list_item.setProperty('IsPlayable', 'true')
         is_folder = False
-        xbmcplugin.addDirectoryItem(_handle, get_url(action='play', video='rtmp://live.idnes.cz/slow/slowtv7_360p'), list_item, is_folder)
+        xbmcplugin.addDirectoryItem(_handle, get_url(action='play', video='http://live.idnes.cz/slow/slowtv7_360p/playlist.m3u8'), list_item, is_folder)
         xbmcplugin.endOfDirectory(_handle)
 
 
