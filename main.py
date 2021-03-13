@@ -5,9 +5,9 @@
 # License: GPL v.3 https://www.gnu.org/copyleft/gpl.html
 
 import sys
-from urllib import urlencode
-from urlparse import parse_qsl
-import urllib2
+from urllib.parse import urlencode
+from urllib.parse import parse_qsl
+import urllib.request
 import zlib
 import re
 import xbmcgui
@@ -74,13 +74,14 @@ def router(paramstring):
         xbmcplugin.endOfDirectory(_handle)
 
 def getRequest(url, udata=None, headers=httpHeaders):
-    req = urllib2.Request(url.encode(UTF8), udata, headers)
+    req = urllib.request.Request(url, udata, headers)
     try:
-        response = urllib2.urlopen(req)
-        page = response.read()
-        if response.info().getheader('Content-Encoding') == 'gzip':
-            page = zlib.decompress(page, zlib.MAX_WBITS + 16)
-        response.close()
+      response = urllib.request.urlopen(req)
+      page = response.read()
+      if response.getheader('Content-Encoding') == 'gzip':
+          page = zlib.decompress(page, zlib.MAX_WBITS + 16)
+      page = page.decode()
+      response.close()
     except Exception:
         page = ""
     return(page)
