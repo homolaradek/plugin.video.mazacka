@@ -19,6 +19,9 @@ provider-name="Radek Homola">
   <description lang="sk_SK">Mazacie električka s evidenčným číslom 5572, pre ktorú sa vžil skrátený názov "Mazačka", slúži na pražských električkových tratiach od januára 2015. Aplikácia mazivá pomáha znížiť hluk a opotrebenie koľajníc a kolies. Každý deň urazí Mazačka v priemere vyše 200 kilometrov.</description>
   <description lang="de_DE">Die Straßenbahn mit der Kennzeichennummer 5572, die die Schienen schmiert, für die der abgekürzte Name "Mazačka" übernommen wurde, wird seit Januar 2015 in Prager Straßenbahnlinien eingesetzt. Die Schmiermittelanwendung trägt dazu bei, Geräusche und Verschleiß an Schienen und Rädern zu reduzieren. Mazačka legt jeden Tag durchschnittlich über 200 Kilometer zurück.</description>
   <platform>all</platform>
+  <language>cs en de sk</language>
+  <license>GPL-2.0-only</license>
+  <source>https://github.com/homolaradek/plugin.video.mazacka</source>
   <assets>
     <icon>icon.png</icon>
     <fanart>fanart.jpg</fanart>
